@@ -24,17 +24,41 @@ func main() {
 		fmt.Println("It's a weekday")
 	}
 
+	t := time.Now()
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("It's before noon")
+	default:
+		fmt.Println("It's after noon")
+	}
+
+
+	nums := []int{2,3,4}  // range?
+	fmt.Println("nums: ", nums)
+
+	var array [3]int      // array
+	array[0]=2
+	array[1]=3
+	array[2]=4
+	fmt.Println("array: ", array)
+
+
 	whatAmI := func(i interface{}) {
 		switch t := i.(type) {
 		case bool:
 			fmt.Println("I'm a bool")
 		case int:
-			fmt.Println("I'm an int")
+			fmt.Println("I'm a int")
 		default:
-			fmt.Printf("Don't know type %T\n", t)
+			fmt.Println(t)
+            fmt.Printf("Don't know type %T\n", t)
 		}
 	}
+
+	whatAmI(10)
 	whatAmI(true)
-	whatAmI(1)
-	whatAmI("hey")
+	whatAmI("abc")
+
+	whatAmI(nums)
+	whatAmI(array)
 }
