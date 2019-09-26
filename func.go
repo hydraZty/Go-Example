@@ -14,6 +14,12 @@ func subtract(a, b int) (int, int) {
 	return a + b, a - b
 }
 
+func add_one (a int){
+	a++
+	fmt.Println(a)
+}
+
+
 func main() {
 
 	res := plusPlus(1, 2, 3)
@@ -27,4 +33,9 @@ func main() {
 
 	fmt.Println(resPlus)
 	fmt.Println(resSubstract)
+
+	num := 100
+
+	add_one(num)
+	fmt.Println(num)
 }
